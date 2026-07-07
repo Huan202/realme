@@ -1,4 +1,4 @@
-﻿name: Update Realm Version
+name: Update Realm Version
 
 on:
   schedule:
