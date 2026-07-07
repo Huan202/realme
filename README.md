@@ -85,24 +85,18 @@ DTAG
 wget -qO- https://raw.githubusercontent.com/Huan202/realm/main/xwPF.sh | sudo bash -s install
 ```
 
-### 一键彻底卸载
-
-```bash
-curl -fsSL https://raw.githubusercontent.com/Huan202/realm/main/uninstall.sh | sudo bash
-```
-
-无确认直接卸载:
-
-```bash
-curl -fsSL https://raw.githubusercontent.com/Huan202/realm/main/uninstall.sh | sudo REALM_XWPF_UNINSTALL_CONFIRM=DELETE bash
-```
-
 ### 网络受限使用加速源,一键安装
 
 ```bash
 wget -qO- https://v6.gh-proxy.org/https://raw.githubusercontent.com/Huan202/realm/main/xwPF.sh | sudo bash -s install
 ```
 若加速源失效，可多次重试或更换其他具有内置加速功能的代理源
+
+### 无确认直接卸载
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/Huan202/realm/main/uninstall.sh | sudo REALM_XWPF_UNINSTALL_CONFIRM=DELETE bash
+```
 
 ## 无法联网的离线安装
 
