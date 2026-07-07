@@ -375,7 +375,6 @@ MPTCP（启用MPTCP时创建）
 
 - **其他开源项目：** [https://github.com/Huan202](https://github.com/Huan202)
 - **问题反馈：** [GitHub Issues](https://github.com/Huan202/realm/issues)
-- **纯闲聊群** [tg交流群](https://t.me/zywe_chat) 
 
 ---
 

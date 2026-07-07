@@ -373,7 +373,6 @@ MPTCP (created when MPTCP is enabled)
 
 - **More Projects:** [https://github.com/Huan202](https://github.com/Huan202)
 - **Bug Reports:** [GitHub Issues](https://github.com/Huan202/realm/issues)
-- **Chat:** [Telegram Group](https://t.me/zywe_chat)
 
 ---
 
