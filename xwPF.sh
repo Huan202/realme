@@ -8,11 +8,10 @@ INSTALL_DIR="/usr/local/bin"
 LIB_DIR="$INSTALL_DIR/lib"
 SHORTCUT_PATH="/usr/local/bin/pf"
 
-# Repository source.
-# Override these when testing a fork:
-#   REALM_XWPF_REPO_OWNER=yourname REALM_XWPF_REPO_NAME=realme REALM_XWPF_REPO_BRANCH=main bash xwPF.sh install
+# 仓库地址
+# 可通过环境变量切换到自己的 fork
 REPO_OWNER="${REALM_XWPF_REPO_OWNER:-Huan202}"
-REPO_NAME="${REALM_XWPF_REPO_NAME:-realme}"
+REPO_NAME="${REALM_XWPF_REPO_NAME:-realm}"
 REPO_BRANCH="${REALM_XWPF_REPO_BRANCH:-main}"
 REPO_RAW_URL="${REALM_XWPF_RAW_URL:-https://raw.githubusercontent.com/${REPO_OWNER}/${REPO_NAME}/${REPO_BRANCH}}"
 
