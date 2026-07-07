@@ -85,6 +85,18 @@ Completed: 2025-08-28 20:12:29 | Source: https://github.com/Huan202/realm
 wget -qO- https://raw.githubusercontent.com/Huan202/realm/main/xwPF.sh | sudo bash -s install
 ```
 
+### One-Click Full Uninstall
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/Huan202/realm/main/uninstall.sh | sudo bash
+```
+
+Uninstall without confirmation:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/Huan202/realm/main/uninstall.sh | sudo REALM_XWPF_UNINSTALL_CONFIRM=DELETE bash
+```
+
 ### Behind a Restricted Network? Use an Accelerated Mirror
 
 ```bash
