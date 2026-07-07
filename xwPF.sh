@@ -14,6 +14,7 @@ REPO_OWNER="${REALM_XWPF_REPO_OWNER:-Huan202}"
 REPO_NAME="${REALM_XWPF_REPO_NAME:-realm}"
 REPO_BRANCH="${REALM_XWPF_REPO_BRANCH:-main}"
 REPO_RAW_URL="${REALM_XWPF_RAW_URL:-https://raw.githubusercontent.com/${REPO_OWNER}/${REPO_NAME}/${REPO_BRANCH}}"
+REPO_CACHE_BUST="${REALM_XWPF_CACHE_BUST:-$(date +%s)}"
 
 # 模块列表（加载顺序）
 LIB_FILES=("core.sh" "rules.sh" "server.sh" "realm.sh" "ui.sh")
@@ -32,6 +33,14 @@ _download() {
     wget -qO "$target" "$url" 2>/dev/null
 }
 
+_cache_bust_url() {
+    local url="$1"
+    case "$url" in
+        *\?*) echo "${url}&ts=${REPO_CACHE_BUST}" ;;
+        *) echo "${url}?ts=${REPO_CACHE_BUST}" ;;
+    esac
+}
+
 # 安装/更新脚本文件到系统（幂等）
 _bootstrap() {
     echo -e "${_YELLOW}正在安装/更新脚本文件...${_NC}"
@@ -39,7 +48,7 @@ _bootstrap() {
     mkdir -p "$LIB_DIR"
 
     # 下载入口脚本
-    if _download "$REPO_RAW_URL/xwPF.sh" "$INSTALL_DIR/xwPF.sh"; then
+    if _download "$(_cache_bust_url "$REPO_RAW_URL/xwPF.sh")" "$INSTALL_DIR/xwPF.sh"; then
         chmod +x "$INSTALL_DIR/xwPF.sh"
         echo -e "  ${_GREEN}✓${_NC} xwPF.sh"
     else
@@ -50,7 +59,7 @@ _bootstrap() {
     # 下载所有模块
     local failed=0
     for f in "${LIB_FILES[@]}"; do
-        if _download "$REPO_RAW_URL/lib/$f" "$LIB_DIR/$f"; then
+        if _download "$(_cache_bust_url "$REPO_RAW_URL/lib/$f")" "$LIB_DIR/$f"; then
             echo -e "  ${_GREEN}✓${_NC} lib/$f"
         else
             echo -e "  ${_RED}✗${_NC} lib/$f 下载失败"
